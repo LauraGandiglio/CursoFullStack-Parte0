@@ -1,0 +1,26 @@
+```mermaid
+sequenceDiagram
+
+
+participant Server
+participant Browser
+
+
+Browser ->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+Browser ->>Server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+Server -->>Browser: HTML document
+Browser ->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server -->>Browser: CSS file
+
+
+Browser ->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Server -->>Browser: JavaScript file
+
+
+Note left of Browser: Cuando se ejecuta el código JavaScript, el Browser busca el JSON de las notas en el servidor.
+
+
+Browser ->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server -->>Browser:  [{ "content": "HTML is easy", "date": "2024-1-1" }, ... ]
+
+```

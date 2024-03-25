@@ -1,0 +1,12 @@
+```mermaid
+sequenceDiagram
+
+
+participant Server
+participant Browser
+
+Browser ->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+Note left of Browser: En esta SPA, cuando ingresamos una nueva nota, solamente se realiza la petición POST y se actualiza el contenido de manera dínamica a diferencia de la app anterior donde una nueva nota significada un refresco completo de la página.
+
+```

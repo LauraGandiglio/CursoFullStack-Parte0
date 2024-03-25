@@ -1,0 +1,25 @@
+```mermaid
+sequenceDiagram
+
+
+participant Server
+participant Browser
+
+
+Browser ->>Server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+Server -->>Browser: HTML document
+Browser ->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server -->>Browser: CSS file
+
+
+Browser ->>Server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+Server -->>Browser: JavaScript file
+
+
+Note left of Browser: Cuando se ejecuta el código JavaScript, el Browser busca el JSON de las notas en el servidor.
+
+
+Browser ->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server -->>Browser:  [{ "content": "Was it a cat i saW", "date": "2024-03-25" }, ... ]
+
+```
